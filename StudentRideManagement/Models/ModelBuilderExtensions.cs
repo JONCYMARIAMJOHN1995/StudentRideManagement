@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -62,7 +63,8 @@ namespace StudentRideManagement.Models
                     AssignedUserId = new Guid("66350743-bfba-45b6-9502-9307f954370d"),
                     IsActive = true,
                     ValidFrom = DateTime.Now,
-                    ValidTo = Convert.ToDateTime("12/31/2049 9:44:55 PM")
+                    ValidTo = DateTime.ParseExact("12/31/2049 09:44:55 PM", "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture)
+                    //ValidTo = Convert.ToDateTime("12/31/2049 9:44:55 PM")
                 }
            );
 
